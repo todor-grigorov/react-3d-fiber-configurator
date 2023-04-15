@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test": "jest",
     "lint:scripts": "eslint --ext .ts,.tsx src",
-    "lint:styles": "stylelint \"src/**/*.css\""
+    "lint:styles": "stylelint \"src/**/*.css\"",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@react-three/drei": "^9.61.1",
