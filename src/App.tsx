@@ -1,8 +1,14 @@
-function App() {
+import Canvas from './canvas'
+import Customizer from './pages/Customizer'
+import Home from './pages/Home'
+
+const App: React.FC = (): JSX.Element => {
   return (
-    <div>
-      <h1 className="head-text">ThreeJS test</h1>
-    </div>
+    <main className="app transition-all-ease-in">
+      <Home />
+      <Canvas />
+      <Customizer />
+    </main>
   )
 }
 
