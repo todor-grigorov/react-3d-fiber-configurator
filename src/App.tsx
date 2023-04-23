@@ -4,7 +4,7 @@ import Home from './pages/Home'
 
 const App: React.FC = (): JSX.Element => {
   return (
-    <main className="app transition-all-ease-in">
+    <main data-testid="main-component" className="app transition-all-ease-in">
       <Home />
       <Canvas />
       <Customizer />

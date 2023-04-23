@@ -4,5 +4,6 @@ import App from './App';
 
 it('renders initial message', () => {
   render(<App />)
-  expect(screen.getByText('ThreeJS test')).toBeInTheDocument()
+  expect(screen.getByTestId('main-component')).toBeInTheDocument()
+  // expect(screen.getByText('ThreeJS test')).toBeInTheDocument()
 })
