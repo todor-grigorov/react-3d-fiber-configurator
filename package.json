@@ -8,6 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "jest",
+    "test:ci": "jest --ci",
     "lint:scripts": "eslint --ext .ts,.tsx src",
     "lint:styles": "stylelint \"src/**/*.css\"",
     "cypress:open": "cypress open"
