@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FilePicker = () => {
+const FilePicker: React.FC = (): JSX.Element => {
   return (
     <div>FilePicker</div>
   )

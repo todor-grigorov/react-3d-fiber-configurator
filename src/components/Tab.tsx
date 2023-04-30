@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Tab = () => {
+const Tab: React.FC = (): JSX.Element => {
   return (
     <div>Tab</div>
   )

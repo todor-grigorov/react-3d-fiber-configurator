@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AIPicker = () => {
+const AIPicker: React.FC = (): JSX.Element => {
   return (
     <div>AIPicker</div>
   )

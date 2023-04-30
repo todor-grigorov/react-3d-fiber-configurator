@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ColorPicker = () => {
+const ColorPicker: React.FC = (): JSX.Element => {
   return (
     <div>ColorPicker</div>
   )
