@@ -1,4 +1,4 @@
-type TabType = {
+export type TabType = {
     name: string;
     icon: string
 }
