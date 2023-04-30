@@ -2,6 +2,8 @@ import React from 'react'
 
 interface ParentProps {
     tab: TabType
+    isFilterTab?: boolean
+    isActiveTab?: boolean
     handleClick: (e: any) => void
 }
 
