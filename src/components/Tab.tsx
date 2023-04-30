@@ -1,4 +1,5 @@
 import React from 'react'
+import { TabType } from '../Types/TabType'
 
 interface ParentProps {
     tab: TabType
