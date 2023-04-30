@@ -6,7 +6,7 @@ import { useSnapshot } from 'valtio'
 interface ParentProps {
     type: string | 'filled'
     title: string
-    customStyles: string
+    customStyles?: string
     handleClick: (e: any) => void
 }
 
