@@ -1,8 +1,13 @@
 import React from 'react'
 
-const CameraRig = () => {
+interface ParentProps {
+}
+
+type Props = ParentProps
+
+const CameraRig: React.FC<Props> = ({}: Props): JSX.Element => {
   return (
-    <div>CameraRig</div>
+    <></>
   )
 }
 
