@@ -18,15 +18,21 @@ type GLTFResult = GLTF & {
   }
 }
 
+
 const Shirt = (props: JSX.IntrinsicElements['group']) => {
 const snap = useSnapshot(state)
-const {nodes, materials} = useGLTF('/shirt_baked.glb') as GLTFResult
+const { nodes, materials } = useGLTF('/shirt_baked.glb') as GLTFResult
+
+const logoTexture = useTexture(snap.logoDecal)
+const fullTexture = useTexture(snap.fullDecal)
 
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.T_Shirt_male.geometry} material={materials.lambert1} />
+      <mesh castShadow geometry={nodes.T_Shirt_male.geometry} material={materials.lambert1} material-roghness={1} dispose={null} />
     </group>
   )
 }
 
 export default Shirt
+
+useGLTF.preload('/shirt_baked.glb')
