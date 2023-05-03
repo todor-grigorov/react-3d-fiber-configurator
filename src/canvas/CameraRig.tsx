@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { easing } from 'maath'
 import { useSnapshot } from 'valtio'
@@ -10,9 +10,9 @@ interface ParentProps {
 
 type Props = ParentProps
 
-const CameraRig: React.FC<Props> = ({}: Props): JSX.Element => {
+const CameraRig: React.FC<Props> = ({ children }: PropsWithChildren<Props>): JSX.Element => {
   return (
-    <></>
+    <group>{children}</group>
   )
 }
 
