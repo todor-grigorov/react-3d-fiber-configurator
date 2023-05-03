@@ -18,7 +18,18 @@ const CameraRig: React.FC<Props> = ({ children }: PropsWithChildren<Props>): JSX
   useFrame((state, delta) => {
     const isBreakpoint = window.innerWidth <= 1260
     const isMobile = window.innerWidth <= 600
-    
+
+    // set the initial position of the model
+    let targetPosition = [-0.4, 0, 2]
+
+    if (snap.intro) {
+      if (isBreakpoint) targetPosition = [0, 0, 2]
+      if (isMobile) targetPosition = [0, 0.2, 2.5]
+    } else {
+      if (isMobile) targetPosition = [0, 0, 2.5]
+      else targetPosition = [0, 0, 2]
+    }
+
     // set the model rotation smoothly
     if (!group.current) return
     easing.dampE(
