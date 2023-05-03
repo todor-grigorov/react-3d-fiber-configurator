@@ -13,6 +13,18 @@ type Props = ParentProps
 
 const CameraRig: React.FC<Props> = ({ children }: PropsWithChildren<Props>): JSX.Element => {
   const group = useRef<Group | null>(null)
+  const snap = useSnapshot(state)
+
+  useFrame((state, delta) => {
+    // set the model rotation smoothly
+    if (!group.current) return
+    easing.dampE(
+      group.current.rotation,
+      [state.pointer.y / 10, -state.pointer.x / 5, 0],
+      0.25,
+      delta
+    )
+  })
 
   return (
     <group ref={group}>{children}</group>
