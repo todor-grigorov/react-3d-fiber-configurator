@@ -16,6 +16,9 @@ const CameraRig: React.FC<Props> = ({ children }: PropsWithChildren<Props>): JSX
   const snap = useSnapshot(state)
 
   useFrame((state, delta) => {
+    const isBreakpoint = window.innerWidth <= 1260
+    const isMobile = window.innerWidth <= 600
+    
     // set the model rotation smoothly
     if (!group.current) return
     easing.dampE(
