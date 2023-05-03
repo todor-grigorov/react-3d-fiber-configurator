@@ -29,6 +29,14 @@ const fullTexture = useTexture(snap.fullDecal)
   return (
     <group {...props} dispose={null}>
       <mesh castShadow geometry={nodes.T_Shirt_male.geometry} material={materials.lambert1} material-roghness={1} dispose={null} />
+      {snap.isFullTexture && (
+        <Decal 
+          position={[0, 0, 0]}
+          rotation={[0, 0, 0]}
+          scale={1}
+          map={fullTexture}
+        />
+      )}
     </group>
   )
 }
