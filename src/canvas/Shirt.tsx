@@ -26,8 +26,12 @@ const { nodes, materials } = useGLTF('/shirt_baked.glb') as GLTFResult
 const logoTexture = useTexture(snap.logoDecal)
 const fullTexture = useTexture(snap.fullDecal)
 
+useFrame((state, delta) => easing.dampC(materials.lambert1.color, snap.color, 0.25, delta))
+
+const stateString = JSON.stringify(snap)
+
   return (
-    <group {...props} dispose={null}>
+    <group key={stateString} {...props} dispose={null}>
       <mesh castShadow geometry={nodes.T_Shirt_male.geometry} material={materials.lambert1} material-roghness={1} dispose={null}>
         {snap.isFullTexture && (
           <Decal 
