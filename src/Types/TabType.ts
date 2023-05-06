@@ -1,4 +1,7 @@
+import { EditorTabName } from './EditorTabName'
+import { FilterTabName } from './FilterTabName'
+
 export type TabType = {
-    name: string;
-    icon: string
+  name: EditorTabName | FilterTabName
+  icon: string
 }
