@@ -7,7 +7,7 @@ type ParentProps = {
 
 type Props = ParentProps
 
-const FilePicker: React.FC = (): JSX.Element => {
+const FilePicker: React.FC<Props> = ({ file, setFile }: Props): JSX.Element => {
   return <div>FilePicker</div>
 }
 
