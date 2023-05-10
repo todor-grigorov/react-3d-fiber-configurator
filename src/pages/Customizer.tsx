@@ -54,6 +54,20 @@ const Customizer: React.FC = (): JSX.Element => {
     }
   }
 
+  const handleActiveFilterTab = (tabName: FilterTabName) => {
+    switch (tabName) {
+      case FilterTabName.LogoShirt:
+        state.isLogoTexture = !activeFilterTab[tabName]
+        break
+      case FilterTabName.StylishShirt:
+        state.isFullTexture = !activeFilterTab[tabName]
+        break
+      default:
+        state.isLogoTexture = true
+        state.isFullTexture = false
+    }
+  }
+
   return (
     <AnimatePresence>
       {!snap.intro && (
