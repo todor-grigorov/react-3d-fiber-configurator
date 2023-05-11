@@ -1,3 +1,5 @@
+import { DecalNames } from '../Types/DecalNames'
+import { DecalType } from '../Types/DecalType'
 import { EditorTabName } from '../Types/EditorTabName'
 import { FilterTabName } from '../Types/FilterTabName'
 import { TabType } from '../Types/TabType'
@@ -29,13 +31,13 @@ export const FilterTabs = [
   },
 ]
 
-export const DecalTypes = {
+export const DecalTypes: DecalType = {
   logo: {
-    stateProperty: 'logoDecal',
-    filterTab: 'logoShirt',
+    stateProperty: DecalNames.LogoDecal,
+    filterTab: FilterTabName.LogoShirt,
   },
   full: {
-    stateProperty: 'fullDecal',
-    filterTab: 'stylishShirt',
+    stateProperty: DecalNames.FullDecal,
+    filterTab: FilterTabName.StylishShirt,
   },
 }
