@@ -17,6 +17,7 @@ import {
 } from '../components'
 import { EditorTabName } from '../Types/EditorTabName'
 import { FilterTabName } from '../Types/FilterTabName'
+import { DecalNames } from '../Types/DecalNames'
 
 type ActiveFilterTabState = {
   logoShirt: boolean
@@ -51,6 +52,16 @@ const Customizer: React.FC = (): JSX.Element => {
 
       default:
         return null
+    }
+  }
+
+  const handleDecals = (type: 'logo' | 'full', result: DecalNames) => {
+    const decalType = DecalTypes[type]
+
+    state[decalType.stateProperty] = result
+
+    if (!activeFilterTab[decalType.filterTab]) {
+      handleActiveFilterTab(decalType.filterTab)
     }
   }
 
