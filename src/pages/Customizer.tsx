@@ -79,6 +79,13 @@ const Customizer: React.FC = (): JSX.Element => {
     }
   }
 
+  const readFile = (type: 'logo' | 'full') => {
+    reader(file as any).then((result) => {
+      handleDecals(type, result as DecalNames)
+      setActiveEditorTab(null)
+    })
+  }
+
   return (
     <AnimatePresence>
       {!snap.intro && (
