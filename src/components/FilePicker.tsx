@@ -1,5 +1,7 @@
 import React from 'react'
 
+import CustomButton from './CustomButton'
+
 type ParentProps = {
   file: string
   setFile: React.Dispatch<React.SetStateAction<string>>
