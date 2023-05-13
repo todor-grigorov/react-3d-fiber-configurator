@@ -46,7 +46,7 @@ const Customizer: React.FC = (): JSX.Element => {
       case EditorTabName.ColorPicker:
         return <ColorPicker />
       case EditorTabName.FilePicker:
-        return <FilePicker file={file} setFile={setFile} />
+        return <FilePicker file={file} setFile={setFile} readFile={readFile} />
       case EditorTabName.AiPicker:
         return <AIPicker />
 

@@ -3,6 +3,7 @@ import React from 'react'
 type ParentProps = {
   file: string
   setFile: React.Dispatch<React.SetStateAction<string>>
+  readFile: (type: 'logo' | 'full') => void
 }
 
 type Props = ParentProps
