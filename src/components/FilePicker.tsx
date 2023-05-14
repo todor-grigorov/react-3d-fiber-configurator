@@ -43,7 +43,7 @@ const FilePicker: React.FC<Props> = ({
 
       <div className="mt-4 flex fle-wrap gap-3">
         <CustomButton
-          type="outlined"
+          type="outline"
           title="Logo"
           handleClick={() => readFile('logo')}
           customStyles="text-xs"

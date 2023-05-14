@@ -1,8 +1,8 @@
 import React, { MouseEventHandler } from 'react'
+import { useSnapshot } from 'valtio'
 
 import state from '../store'
-import { useSnapshot } from 'valtio'
-import { color } from 'framer-motion'
+import { getContrastingColor } from '../config/helpers'
 
 interface ParentProps {
   type: string | 'filled'
@@ -25,7 +25,7 @@ const CustomButton: React.FC<Props> = ({
     if (type === 'filled') {
       return {
         backgroundColor: snap.color,
-        color: '#fff',
+        color: getContrastingColor(snap.color),
       }
     } else if (type === 'outline') {
       return {
