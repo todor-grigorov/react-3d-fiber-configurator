@@ -27,7 +27,7 @@ type ActiveFilterTabState = {
 const Customizer: React.FC = (): JSX.Element => {
   const snap = useSnapshot(state)
 
-  const [file, setFile] = useState<string>('')
+  const [file, setFile] = useState<File>()
 
   const [prompt, setPrompt] = useState<string>('')
   const [generatingImg, setGeneratingImg] = useState(false)
