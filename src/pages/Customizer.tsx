@@ -77,6 +77,13 @@ const Customizer: React.FC = (): JSX.Element => {
         state.isLogoTexture = true
         state.isFullTexture = false
     }
+
+    setActiveFilterTab((prevState) => {
+      return {
+        ...prevState,
+        [tabName]: !prevState[tabName],
+      }
+    })
   }
 
   const readFile = (type: 'logo' | 'full') => {
