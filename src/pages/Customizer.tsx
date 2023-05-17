@@ -48,10 +48,29 @@ const Customizer: React.FC = (): JSX.Element => {
       case EditorTabName.FilePicker:
         return <FilePicker file={file} setFile={setFile} readFile={readFile} />
       case EditorTabName.AiPicker:
-        return <AIPicker />
+        return (
+          <AIPicker
+          // prompt={prompt}
+          // setPrompt={setPrompt}
+          // generatingImg={generatingImg}
+          // handleSubmit={handleSubmit}
+          />
+        )
 
       default:
         return null
+    }
+  }
+
+  const handleSubmit = async (type: string) => {
+    if (!prompt) return alert('Please enter a prompt')
+
+    try {
+    } catch (error) {
+      alert(error)
+    } finally {
+      setGeneratingImg(false)
+      setActiveEditorTab(null)
     }
   }
 
