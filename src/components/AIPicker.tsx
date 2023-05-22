@@ -5,7 +5,7 @@ interface ParentProps {
   prompt: string
   setPrompt: React.Dispatch<React.SetStateAction<string>>
   generatingImg: boolean
-  handleSubmit: (type: string) => void
+  handleSubmit: (type: 'logo' | 'full') => void
 }
 
 type Props = ParentProps

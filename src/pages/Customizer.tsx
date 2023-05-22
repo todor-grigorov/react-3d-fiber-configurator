@@ -62,10 +62,25 @@ const Customizer: React.FC = (): JSX.Element => {
     }
   }
 
-  const handleSubmit = async (type: string) => {
+  const handleSubmit = async (type: 'logo' | 'full') => {
     if (!prompt) return alert('Please enter a prompt')
 
     try {
+      setGeneratingImg(true)
+
+      const response = await fetch('http://localhost:5000/api/v1/dalle', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          prompt,
+        }),
+      })
+
+      const data = await response.json()
+
+      handleDecals(type, `data:image/png;base64,${data.photo}`)
     } catch (error) {
       alert(error)
     } finally {
@@ -74,7 +89,7 @@ const Customizer: React.FC = (): JSX.Element => {
     }
   }
 
-  const handleDecals = (type: 'logo' | 'full', result: DecalNames) => {
+  const handleDecals = (type: 'logo' | 'full', result: DecalNames | string) => {
     const decalType = DecalTypes[type]
 
     state[decalType.stateProperty] = result
