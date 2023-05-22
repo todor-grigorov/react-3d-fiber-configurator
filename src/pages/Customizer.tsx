@@ -50,10 +50,10 @@ const Customizer: React.FC = (): JSX.Element => {
       case EditorTabName.AiPicker:
         return (
           <AIPicker
-          // prompt={prompt}
-          // setPrompt={setPrompt}
-          // generatingImg={generatingImg}
-          // handleSubmit={handleSubmit}
+            prompt={prompt}
+            setPrompt={setPrompt}
+            generatingImg={generatingImg}
+            handleSubmit={handleSubmit}
           />
         )
 
