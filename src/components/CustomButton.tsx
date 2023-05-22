@@ -8,7 +8,7 @@ interface ParentProps {
   type: string | 'filled'
   title: string
   customStyles?: string
-  handleClick: (e: any) => void
+  handleClick?: (e: any) => void
 }
 
 type Props = ParentProps
