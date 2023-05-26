@@ -110,6 +110,7 @@ const Customizer: React.FC = (): JSX.Element => {
       default:
         state.isLogoTexture = true
         state.isFullTexture = false
+        break
     }
 
     setActiveFilterTab((prevState) => {
