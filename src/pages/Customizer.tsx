@@ -62,6 +62,15 @@ const Customizer: React.FC = (): JSX.Element => {
     }
   }
 
+  const handleActiveEditorTabClick = (
+    tabName: EditorTabName | FilterTabName | null
+  ) => {
+    setActiveEditorTab((prevState) => {
+      if (prevState === tabName) tabName = null
+      return tabName
+    })
+  }
+
   const handleSubmit = async (type: 'logo' | 'full') => {
     if (!prompt) return alert('Please enter a prompt')
 
@@ -143,7 +152,7 @@ const Customizer: React.FC = (): JSX.Element => {
                   <Tab
                     key={tab.name}
                     tab={tab}
-                    handleClick={() => setActiveEditorTab(tab.name)}
+                    handleClick={() => handleActiveEditorTabClick(tab.name)}
                   />
                 ))}
 
