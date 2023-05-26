@@ -32,9 +32,9 @@ const Customizer: React.FC = (): JSX.Element => {
   const [prompt, setPrompt] = useState<string>('')
   const [generatingImg, setGeneratingImg] = useState(false)
 
-  const [activeEditorTab, setActiveEditorTab] = useState<
-    EditorTabName | FilterTabName | null
-  >(null)
+  const [activeEditorTab, setActiveEditorTab] = useState<EditorTabName | null>(
+    null
+  )
   const [activeFilterTab, setActiveFilterTab] = useState<ActiveFilterTabState>({
     logoShirt: true,
     stylishShirt: false,
@@ -62,9 +62,7 @@ const Customizer: React.FC = (): JSX.Element => {
     }
   }
 
-  const handleActiveEditorTabClick = (
-    tabName: EditorTabName | FilterTabName | null
-  ) => {
+  const handleActiveEditorTabClick = (tabName: EditorTabName | null) => {
     setActiveEditorTab((prevState) => {
       if (prevState === tabName) tabName = null
       return tabName
@@ -152,7 +150,9 @@ const Customizer: React.FC = (): JSX.Element => {
                   <Tab
                     key={tab.name}
                     tab={tab}
-                    handleClick={() => handleActiveEditorTabClick(tab.name)}
+                    handleClick={() =>
+                      handleActiveEditorTabClick(tab.name as EditorTabName)
+                    }
                   />
                 ))}
 
