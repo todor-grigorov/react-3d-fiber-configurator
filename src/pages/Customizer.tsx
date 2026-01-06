@@ -87,7 +87,7 @@ const Customizer: React.FC = (): JSX.Element => {
 
       const data = await response.json()
 
-      handleDecals(type, `data:image/png;base64,${data.photo}`)
+      if (data.photo) handleDecals(type, `data:image/png;base64,${data.photo}`)
     } catch (error) {
       alert(error)
     } finally {
